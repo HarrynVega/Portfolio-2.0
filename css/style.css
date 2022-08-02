@@ -1,0 +1,332 @@
+/* ===================================
+    CSS Variables for dark mode switch
+   =================================== */
+
+.white-theme{
+    --primary-color: hsl(0, 0%, 100%);
+    --secondary-color: hsl(281, 78%, 46%);
+    --primary-color-inversion: hsl(0, 0%, 0%)00;
+    --nav-color: hsl(0, 0%, 0%, 0.5);
+    --svg-filter: invert(24%) sepia(64%) saturate(6769%) hue-rotate(276deg) brightness(84%) contrast(102%);
+    --logo-svg-filter: invert(0%) sepia(2%) saturate(0%) hue-rotate(253deg) brightness(103%) contrast(100%);
+    --background-color: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(227,146,252,1) 100%); /* currently not working with animation */
+    --url-menu-svg: url('../img/Nav-menu-dark.svg');
+    --url-menu-theme: url('../img/Moon.svg');
+    transition: 500ms;
+}
+.dark-theme{
+    --primary-color: hsl(0, 0%, 0%);
+    --secondary-color: hsl(286, 95%, 78%);
+    --primary-color-inversion: hsl(0, 0%, 100%);
+    --nav-color: hsla(0, 0%, 100%, 0.1);
+    --svg-filter: invert(80%) sepia(19%) saturate(7433%) hue-rotate(217deg) brightness(99%) contrast(100%);
+    --logo-svg-filter: invert(100%) sepia(94%) saturate(2%) hue-rotate(133deg) brightness(110%) contrast(101%);
+    --background-color: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(38,7,52,1) 96%, rgba(31,6,42,1) 100%); /* currently not working with animation */
+    --url-menu-svg: url('../img/Nav-menu-white.svg');
+    --url-menu-theme: url('../img/Sun.svg');
+    transition: 500ms;
+}
+
+.dark-switch{
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+
+/* ===============
+    Navigation bar
+   =============== */
+
+.logo{
+    margin-left: 20px;
+}
+.filtro-logo{
+    filter: var(--logo-svg-filter);
+}
+
+nav ul{
+    align-items: center;
+}
+
+nav ul li a{
+    color: hsl(0, 0%, 100%);
+    transition: 250ms;
+}
+
+nav ul li.active a{
+    color: var(--secondary-color);
+}
+
+nav ul li a:hover{
+    color: var(--secondary-color);
+    text-shadow: 0 0 7px var(--secondary-color),
+    0 0 10px var(--secondary-color),
+    0 0 21px var(--secondary-color),
+    0 0 42px var(--secondary-color),
+    0 0 82px var(--secondary-color),
+    0 0 92px var(--secondary-color),
+    0 0 102px var(--secondary-color),
+    0 0 151px var(--secondary-color); /* Glowing effect for text */
+    transition: 250ms;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+body{
+    background: var(--primary-color);/* rgb(20, 20, 20); */
+    overflow-x: hidden;
+}
+
+.flex{
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.dark-mode-switch{
+    cursor: pointer;
+    width: 2rem;
+    background: var(--url-menu-theme);
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50px;
+    transition: 250ms;
+}
+.dark-mode-switch:hover{
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 7px var(--secondary-color),
+    0 0 10px var(--secondary-color),
+    0 0 21px var(--secondary-color),
+    0 0 42px var(--secondary-color),
+    0 0 82px var(--secondary-color); 
+    border-radius: 50px;
+    transition: 250ms;
+}
+
+/* ============
+    Main header 
+   ============ */
+
+.main-header{
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-navigation{
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    background: var(--nav-color);
+    backdrop-filter: blur(1rem);
+}
+
+.main-navigation a{
+    margin: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+/* ===============
+    Main SVG image
+   =============== */
+
+.filtrosvg{
+    margin-left: 5%;
+    margin-top: 5%;
+    filter: var(--svg-filter);
+}
+.imagen{
+    width: 100%;
+    height: auto;
+}
+
+/* =======================
+    Home Site Displacement 
+   ======================= */
+
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    animation: transitionIn 0.75s;
+}
+
+.izquierda{
+    width: 42%;
+    height: auto;
+}
+
+.derecha{
+    color: var(--primary-color-inversion);
+    font-family: 'Montserrat', sans-serif;
+    margin: 2%;
+    margin-top: 5%;
+    width: 48%;
+    height: auto;
+}
+
+.derecha h1{
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.derecha h1 .h1-secondary-color{
+    color: var(--secondary-color);
+    font-size: 3rem;
+}
+
+.derecha h2{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.derecha p{
+    font-size: 1.1rem;
+    font-weight: 100;
+    line-height: 1.5rem;
+}
+
+.download-center{
+    margin-top: 5%;
+    margin-left: 15%;
+}
+.download-button{
+    display: block;
+    background: none;
+    color: var(--secondary-color);
+    padding: 15px;;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    width: 70%;
+    border-color: var(--secondary-color);
+    border-style: solid;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: 500ms;
+}
+
+.download-button:hover{
+    color: var(--primary-color);
+    background: var(--secondary-color);
+    box-shadow: 0 0 25px var(--secondary-color);
+    transition: 500ms;
+}
+
+/* =======================================
+    Responsive adaptation to screen width 
+   ======================================= */
+
+@media screen and (max-width:1300px){
+    .derecha{
+        width: 35%;
+    }
+}
+@media screen and (max-width:1000px){
+    .derecha{
+        width: 35%;
+    }
+    .izquierda{
+        margin-top: 5%; 
+    }
+    .derecha h1{
+        font-size: 3rem;
+        font-weight: 500;
+    }
+    .derecha h2{
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    .download-center{
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width:800px){
+    .derecha{
+        width: 100%;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+    
+    .header-color{
+        background: none;
+        backdrop-filter: none;
+    }
+    .main-navigation{
+        --gap: 2em;
+        color: var(--primary-color);
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 25%;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+        background: var(--nav-color);
+        backdrop-filter: blur(1rem);
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    .main-navigation[data-visible="true"]{
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle{
+        display: block;
+        position:absolute;
+        z-index: 9999;
+        background: var(--url-menu-svg);
+        background-repeat: no-repeat;
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+    .download-center{
+        margin-left: 10%;
+    }
+    
+}
+
+/* ==========================
+    Sound Reader hidder class 
+   ========================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+
+/* ====================
+      Main load animation 
+   ==================== */
+
+@keyframes transitionIn {
+    from{
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to{
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
