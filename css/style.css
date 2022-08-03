@@ -5,7 +5,7 @@
 .white-theme{
     --primary-color: hsl(0, 0%, 100%);
     --secondary-color: hsl(281, 78%, 46%);
-    --primary-color-inversion: hsl(0, 0%, 0%)00;
+    --primary-color-inversion: hsl(0, 0%, 0%);
     --nav-color: hsl(0, 0%, 0%, 0.5);
     --svg-filter: invert(24%) sepia(64%) saturate(6769%) hue-rotate(276deg) brightness(84%) contrast(102%);
     --logo-svg-filter: invert(0%) sepia(2%) saturate(0%) hue-rotate(253deg) brightness(103%) contrast(100%);
@@ -219,10 +219,86 @@ body{
     color: var(--primary-color);
     background: var(--secondary-color);
     box-shadow: 0 0 25px var(--secondary-color);
+    letter-spacing: 3px;
     transition: 500ms;
 }
 
-/* =======================================
+/* =======================
+    Contact Site Displacement 
+   ======================= */
+
+.container form{
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container form h1{
+    text-align: center;
+    font-weight: 500;
+    color: var(--primary-color-inversion);
+    font-size: 2.5rem;
+    margin-bottom: 5%;
+}
+
+.container form input, .container form textarea{
+    align-self: center;
+    margin: 5px;
+    padding: 15px;
+    width: 50%;
+    border-radius: 5px;
+    border-color: var(--primary-color-inversion);
+    border-width: 2px;
+    font-family: 'Montserrat', sans-serif;
+    background: transparent;
+}
+.container form textarea{
+    height: 15%;
+    resize: none;
+}
+
+.container form button{
+    margin-top: 15px;
+    width: 50%;
+    height: 8%;
+    align-self: center;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: var(--secondary-color);
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: var(--secondary-color);
+    text-align: center;
+    transition: 500ms;
+}
+
+.container form button:hover{
+    color: var(--primary-color);
+    background: var(--secondary-color);
+    box-shadow: 0 0 25px var(--secondary-color);
+    letter-spacing: 3px;
+    transition: 500ms;
+}
+
+/* ==========================
+    Sound Reader hidder class 
+   ========================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+  /* =======================================
     Responsive adaptation to screen width 
    ======================================= */
 
@@ -297,24 +373,11 @@ body{
     .download-center{
         margin-left: 10%;
     }
-    
+
+    .container form{
+        width: 100%;
+    }
 }
-
-/* ==========================
-    Sound Reader hidder class 
-   ========================== */
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-  }
-
 
 /* ====================
       Main load animation 

@@ -54,6 +54,18 @@
         </nav>
     </header>
 
+    <div class="container">
+        <form onsubmit="SendContact(); reset(); return false">
+            <h1>Get in contact</h1>
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="text" id="phone" placeholder="Phone number" required>
+            <textarea id="message" rows="10" placeholder="How can I help you?"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
