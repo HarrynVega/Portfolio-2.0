@@ -36,7 +36,7 @@ function SendContact(){
         SecureToken: "2f921160-9e9b-47bb-a86f-66a5c788c278",
         
         To : 'harrynmiranda@gmail.com',
-        From : document.getElementById("email").value,
+        From : 'tomasharryn@outlook.com',
         Subject : "New contact form",
         Body : "Name: " + document.getElementById("name").value
         + "<br> Email: " + document.getElementById("email").value
