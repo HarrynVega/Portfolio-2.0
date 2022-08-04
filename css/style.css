@@ -7,23 +7,25 @@
     --secondary-color: hsl(281, 78%, 46%);
     --primary-color-inversion: hsl(0, 0%, 0%);
     --nav-color: hsl(0, 0%, 0%, 0.5);
+    --background-experience: hsl(0, 2%, 69%);
     --svg-filter: invert(24%) sepia(64%) saturate(6769%) hue-rotate(276deg) brightness(84%) contrast(102%);
     --logo-svg-filter: invert(0%) sepia(2%) saturate(0%) hue-rotate(253deg) brightness(103%) contrast(100%);
     --background-color: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(227,146,252,1) 100%); /* currently not working with animation */
-    --url-menu-svg: url('../img/Nav-menu-dark.svg');
-    --url-menu-theme: url('../img/Moon.svg');
+    --url-menu-svg: url('../img/svg/Nav-menu-dark.svg');
+    --url-menu-theme: url('../img/svg/Moon.svg');
     transition: 500ms;
 }
 .dark-theme{
     --primary-color: hsl(0, 0%, 0%);
     --secondary-color: hsl(286, 95%, 78%);
     --primary-color-inversion: hsl(0, 0%, 100%);
-    --nav-color: hsla(0, 0%, 100%, 0.1);
+    --nav-color: hsla(0, 0%, 100%, 0.2);
+    --background-experience: hsl(0, 0%, 19%);
     --svg-filter: invert(80%) sepia(19%) saturate(7433%) hue-rotate(217deg) brightness(99%) contrast(100%);
     --logo-svg-filter: invert(100%) sepia(94%) saturate(2%) hue-rotate(133deg) brightness(110%) contrast(101%);
     --background-color: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(38,7,52,1) 96%, rgba(31,6,42,1) 100%); /* currently not working with animation */
-    --url-menu-svg: url('../img/Nav-menu-white.svg');
-    --url-menu-theme: url('../img/Sun.svg');
+    --url-menu-svg: url('../img/svg/Nav-menu-white.svg');
+    --url-menu-theme: url('../img/svg/Sun.svg');
     transition: 500ms;
 }
 
@@ -125,7 +127,7 @@ body{
 }
 
 .main-navigation a{
-    margin: 10px;
+    margin: 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     font-size: 25px;
@@ -224,6 +226,103 @@ body{
 }
 
 /* =======================
+    Portfolio Site Displacement 
+   ======================= */
+
+
+
+    /* =======================
+    Skillset Site Displacement 
+   ======================= */
+
+.container .titulo-skills{
+    width: 80%;
+    margin-inline: 10%;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: var(--primary-color-inversion);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.container .tarjeta{
+    width: 300px;
+    height: 300px;
+ 
+    display: grid;
+    grid-template-rows: minmax(100%, 1fr);
+    grid-template-areas: "stack";
+
+    overflow: hidden;
+}
+
+.container .tarjeta > img,
+.container .tarjeta > figcaption{
+    grid-area: stack;
+}
+
+.container .tarjeta > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .tarjeta > figcaption{
+    grid-area: stack;
+    background: hsl(0, 0%, 0%, 0.5);
+    transform: translateY(calc(100% - 4rem));
+    color: white;
+    transition: transform 500ms;
+}
+
+.container .tarjeta > figcaption h3{
+    transform: translateY(-20px);
+    padding-top: 20px;
+    background: hsla(0, 0%, 0%, 0.75);
+    height: 3.5rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container .tarjeta > figcaption p{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-inline: 25px;
+    font-size: 18px;
+}
+
+.container .tarjeta:hover figcaption{
+    transform: none;
+}
+
+/* =======================
+    Experience Site Displacement 
+   ======================= */
+
+.container .experience{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color: var(--primary-color-inversion);
+    padding: 3%;
+    background: var(--background-experience);
+    margin-top: 2%;
+    margin-inline: 1%;
+    width: 20%;
+    height: 200px;
+    border-style: none;
+    border-radius: 5px;
+    transition: 500ms;
+}
+
+.container .experience:hover{
+    background: var(--secondary-color);
+    box-shadow: 0 0 20px var(--secondary-color);
+    letter-spacing: 2px;
+    transition: 500ms;
+}
+
+/* =======================
     Contact Site Displacement 
    ======================= */
 
@@ -306,6 +405,7 @@ body{
     .derecha{
         width: 35%;
     }
+ 
 }
 @media screen and (max-width:1000px){
     .derecha{
@@ -324,6 +424,11 @@ body{
     }
     .download-center{
         margin-left: 5%;
+    }
+    .container .experience{
+        margin-top: 50px;
+        margin-inline: 2%;
+        width: 45%;
     }
 }
 
@@ -376,6 +481,11 @@ body{
 
     .container form{
         width: 100%;
+    }
+    .container .experience{
+        margin-inline: 10%;
+        margin-top: 5%;
+        width: 90%;
     }
 }
 
