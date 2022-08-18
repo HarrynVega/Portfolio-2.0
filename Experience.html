@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="white-theme">
@@ -52,16 +53,32 @@
 
     <div class="container">
         <div class="titulo-skills"><h1>Projects I have been part of</h1></div>
-        <button onclick="window.open('https://github.com/HarrynVega/Proyecto-Sistemas-Inteligentes-_-Tec-App-Internet','_blank')" class="experience">Intelligent Systems Survey Project</button>
         
-        <button onclick="window.open('https://github.com/HarrynVega/Proyecto-Taller-Ajax','_blank')" class="experience">JQuery & Ajax Implementation Project</button>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><a href="https://github.com/HarrynVega/Proyecto-Taller-Ajax" target="_blank"><img src="img/experience/1.- JQuery & Ajax Implementation Project.png" alt="" srcset=""></a></div>
+            <div class="swiper-slide"><a href="http://harrynvega.ml" target="_blank"><img src="img/experience/2.- My first Portfolio Project.png" alt="" srcset=""></a></div>
+            <div class="swiper-slide"><a href="https://github.com/HarrynVega/Proyecto-Sistemas-Inteligentes-_-Tec-App-Internet" target="_blank"><img src="img/experience/3.- Intelligent Systems Survey Project.png" alt="" srcset=""></a></div>
+            <div class="swiper-slide"><a href="https://harrynvega.github.io/Portfolio-2.0"><img src="img/experience/4.- This Portfolio.png" alt="" srcset=""></a></div>
+            <div class="swiper-slide"><img src="img/experience/5.- Digital recreation of the Universidad Politécnica de Altamira.png" alt="" srcset=""></div>
+            <div class="swiper-slide"><img src="img/experience/6.- The Frog 2D Unity Videogame.png" alt="" srcset=""></div>
+            <div class="swiper-slide"><a href="https://www.instagram.com/oracle_iti" target="_blank"><img src="img/experience/7.- Student chapter ORACLE.png" alt="" srcset=""></a></div>
+            ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
         
-        <button onclick="window.open('http://harrynvega.ml','_blank')" class="experience">My first Portfolio Project</button>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         
-        <button onclick="window.open('https://harrynvega.github.io/Portfolio-2.0/','_blank')" class="experience">This Portfolio</button>
-        
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
